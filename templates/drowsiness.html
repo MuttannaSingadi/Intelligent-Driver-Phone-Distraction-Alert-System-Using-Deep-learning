@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Safety & Drowsiness Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Road Safety Awareness</h1>
+        <p>Fatigue and drowsiness while driving are major causes of accidents. Always ensure you are well-rested before driving.</p>
+        <p>Our AI-powered drowsiness detection system helps prevent accidents by alerting drivers when signs of fatigue are detected.</p>
+        <button onclick="startDetection()">Start Drowsiness Detection</button>
+    </div>
+
+    <script>
+        function startDetection() {
+            fetch('/start-detection', { method: 'POST' })
+                .then(response => alert('Drowsiness Detection Started!'))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
